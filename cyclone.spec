@@ -2,7 +2,7 @@ Summary:	The Cyclone compiler
 Summary(pl):	Kompilator jêzyka Cyclone
 Name:		cyclone
 Version:	0.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.cs.cornell.edu/projects/%{name}/%{name}-%{version}.tar.gz
@@ -29,6 +29,9 @@ attacks, itd.
 %patch1 -p1
 
 %build
+%ifarch ppc
+echo "y" | \
+%endif
 ./configure \
 	-sh /bin/sh \
 	-bindir %{_bindir} \
