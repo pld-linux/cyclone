@@ -1,14 +1,14 @@
 Summary:	The Cyclone compiler
 Summary(pl):	Kompilator jêzyka Cyclone
 Name:		cyclone
-Version:	0.2
-Release:	2
+Version:	0.5
+Release:	0.1
 License:	GPL
 Group:		Development/Languages
-Source0:	http://www.cs.cornell.edu/projects/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	f27081a442bff470f9e477e5d017d2d9
-Source1:	http://www.cs.cornell.edu/projects/%{name}-%{version}-docs.tar.gz
-# Source1-md5:	395c1b64bee877a69c314cf33fda1a1e
+Source0:	http://www.cs.cornell.edu/projects/cyclone/software/%{name}-%{version}.tar.gz
+# Source0-md5:	20d2177e8bc432831fbdaa10aca462ee
+Source1:	http://www.cs.cornell.edu/projects/cyclone/software/%{name}-%{version}-docs.tar.gz
+# Source1-md5:	a3e557032b3444613089894a0e11dff7
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-options.patch
 URL:		http://www.cs.cornell.edu/projects/cyclone/
@@ -26,19 +26,14 @@ bezpiecznym: wolnym od SEGV, przepe³nieñ buforów, format string
 attacks, itd.
 
 %prep
-%setup -q -n %{name} -a1
+%setup -q -n %{name}-%{version}-%{version} -a1
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
-%ifarch ppc
-echo "y" | \
-%endif
-./configure \
-	-sh /bin/sh \
-	-bindir %{_bindir} \
-	-libdir %{_libdir}/%{name} \
-	-incdir %{_includedir}/%{name}
+CFLAGS="%{rpmcflags}"
+LDFLAGS="%{rpmldflags}"
+%configure
 
 %{__make}
 %{__make} cyclone_src
