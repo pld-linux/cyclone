@@ -14,6 +14,7 @@ Source1:	http://www.cs.cornell.edu/projects/cyclone/software/%{name}-%{version}-
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-options.patch
 URL:		http://www.cs.cornell.edu/projects/cyclone/
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,6 +34,7 @@ attacks, itd.
 #%patch1 -p1
 
 %build
+cp -f /usr/share/automake/config.* config
 CFLAGS="%{rpmcflags}"
 LDFLAGS="%{rpmldflags}"
 %configure
