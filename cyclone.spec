@@ -4,7 +4,6 @@ Name:		cyclone
 Version:	0.2
 Release:	1
 License:	GPL
-#Vendor:		
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
