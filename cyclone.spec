@@ -6,7 +6,9 @@ Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://www.cs.cornell.edu/projects/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	f27081a442bff470f9e477e5d017d2d9
 Source1:	http://www.cs.cornell.edu/projects/%{name}-%{version}-docs.tar.gz
+# Source1-md5:	395c1b64bee877a69c314cf33fda1a1e
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-options.patch
 URL:		http://www.cs.cornell.edu/projects/cyclone/
