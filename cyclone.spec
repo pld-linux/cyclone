@@ -13,14 +13,15 @@ URL:		http://www.cs.cornell.edu/projects/cyclone/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Cyclone is a language for C programmers who want to write secure, robust
-programs. It's a dialect of C designed to be safe: free of crashes,
-buffer overflows, format string attacks, and so on.
+Cyclone is a language for C programmers who want to write secure,
+robust programs. It's a dialect of C designed to be safe: free of
+crashes, buffer overflows, format string attacks, and so on.
 
 %description -l pl
-Cyclone jest jêzykiem dla programistów C, którzy chc± pisaæ bezpieczne i
-szybkie programy. Jest on dialektem C zaprojektowanym by byæ bezpiecznym:
-wolnym od SEGV, przepe³nieñ buforów, format string attacks, itd.
+Cyclone jest jêzykiem dla programistów C, którzy chc± pisaæ bezpieczne
+i szybkie programy. Jest on dialektem C zaprojektowanym by byæ
+bezpiecznym: wolnym od SEGV, przepe³nieñ buforów, format string
+attacks, itd.
 
 %prep
 %setup -q -n %{name} -a1
@@ -32,7 +33,7 @@ wolnym od SEGV, przepe³nieñ buforów, format string attacks, itd.
 	-sh /bin/sh \
 	-bindir %{_bindir} \
 	-libdir %{_libdir}/%{name} \
-	-incdir %{_includedir}/%{name} 
+	-incdir %{_includedir}/%{name}
 
 %{__make}
 %{__make} cyclone_src
@@ -48,7 +49,7 @@ echo 'clean:' > doc/Makefile
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
