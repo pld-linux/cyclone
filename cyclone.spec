@@ -26,10 +26,9 @@ szybkie programy. Jest on dialektem C zaprojektowanym by byæ bezpiecznym:
 wolnym od SEGV, przepe³nieñ buforów, format string attacks, itd.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name} -a1
 %patch0 -p1
 %patch1 -p1
-tar zxf %{SOURCE1}
 
 %build
 ./configure \
@@ -54,14 +53,12 @@ rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf INSTALL
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz online-manual/*
+%doc online-manual/*
 %attr(755, root, root) %{_bindir}/*
 %{_libdir}/%{name}
 %{_includedir}/%{name}
