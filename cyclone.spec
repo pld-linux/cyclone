@@ -5,11 +5,9 @@ Version:	0.5
 Release:	0.1
 License:	GPL
 Group:		Development/Languages
-#Source0Download: http://www.cs.cornell.edu/projects/cyclone/
-Source0:	http://www.cs.cornell.edu/projects/cyclone/software/%{name}-%{version}.tar.gz
+Source0:	http://www.eecs.harvard.edu/~greg/cyclone/software/%{name}-%{version}.tar.gz
 # Source0-md5:	20d2177e8bc432831fbdaa10aca462ee
-#Source1Download: http://www.cs.cornell.edu/projects/cyclone/
-Source1:	http://www.cs.cornell.edu/projects/cyclone/software/%{name}-%{version}-docs.tar.gz
+Source1:	http://www.eecs.harvard.edu/~greg/cyclone/software/%{name}-%{version}-docs.tar.gz
 # Source1-md5:	a3e557032b3444613089894a0e11dff7
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-options.patch
