@@ -1,7 +1,7 @@
-diff -ur cyclone/Makefile cyclone-/Makefile
---- cyclone/Makefile	Tue Nov 20 16:00:22 2001
-+++ cyclone-/Makefile	Wed Dec 12 01:27:29 2001
-@@ -65,7 +65,7 @@
+diff -urN cyclone-0.5-0.5.orig/Makefile cyclone-0.5-0.5/Makefile
+--- cyclone-0.5-0.5.orig/Makefile	2003-04-11 22:48:36.000000000 +0200
++++ cyclone-0.5-0.5/Makefile	2003-08-11 15:38:15.000000000 +0200
+@@ -341,7 +341,7 @@
  
  ifdef INC_INSTALL
  inc_install:
@@ -10,21 +10,21 @@ diff -ur cyclone/Makefile cyclone-/Makefile
  inc_uninstall:
  	$(SHELL) config/cyc_install -u $(INC_INSTALL)
  else
-@@ -77,7 +77,7 @@
- 
+@@ -350,7 +350,7 @@
+ endif
  ifdef BIN_INSTALL
  bin_install:
--	$(SHELL) config/cyc_install bin/cyclone$(EXE) bin/cycbison$(EXE) bin/cyclex$(EXE) bin/cycflex$(EXE) $(BIN_INSTALL)
-+	$(SHELL) config/cyc_install bin/cyclone$(EXE) bin/cycbison$(EXE) bin/cyclex$(EXE) bin/cycflex$(EXE) $(DESTDIR)$(BIN_INSTALL)
+-	$(SHELL) config/cyc_install bin/cyclone$(EXE) bin/cycbison$(EXE) bin/cyclex$(EXE) bin/cycflex$(EXE) bin/rewrite$(EXE) bin/aprof$(EXE) $(BIN_INSTALL)
++	$(SHELL) config/cyc_install bin/cyclone$(EXE) bin/cycbison$(EXE) bin/cyclex$(EXE) bin/cycflex$(EXE) bin/rewrite$(EXE) bin/aprof$(EXE) $(DESTDIR)$(BIN_INSTALL)
  bin_uninstall:
  	$(SHELL) config/cyc_install -u $(BIN_INSTALL)
  else
-@@ -89,7 +89,7 @@
- 
+@@ -359,7 +359,7 @@
+ endif
  ifdef LIB_INSTALL
  lib_install:
--	$(SHELL) config/cyc_install bin/cyc-lib/* $(LIB_INSTALL)
-+	$(SHELL) config/cyc_install bin/cyc-lib/* $(DESTDIR)$(LIB_INSTALL)
+-	$(SHELL) config/cyc_install bin/lib/* $(LIB_INSTALL)
++	$(SHELL) config/cyc_install bin/lib/* $(DESTDIR)$(LIB_INSTALL)
  lib_uninstall:
  	$(SHELL) config/cyc_install -u $(LIB_INSTALL)
  else
