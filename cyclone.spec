@@ -5,8 +5,6 @@ Version:	0.2
 Release:	1
 License:	GPL
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	http://www.cs.cornell.edu/projects/%{name}/%{name}-%{version}.tar.gz
 Source1:	http://www.cs.cornell.edu/projects/%{name}-%{version}-docs.tar.gz
 Patch0:		%{name}-DESTDIR.patch
