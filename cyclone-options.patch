@@ -1,0 +1,58 @@
+diff -ur cyclone-/bin/genfiles/Makefile cyclone/bin/genfiles/Makefile
+--- cyclone-/bin/genfiles/Makefile	Mon Nov 19 22:33:42 2001
++++ cyclone/bin/genfiles/Makefile	Wed Dec 12 02:19:21 2001
+@@ -1,8 +1,5 @@
+ include ../../Makefile.inc
+ 
+-OLDCFLAGS := $(CFLAGS)
+-CFLAGS += -O3
+-
+ # I don't know why these need to be repeated here, but they do
+ CYC_LIB_PATH=$(CYCDIR)/bin/cyc-lib
+ CYC_BIN_PATH=$(CYCDIR)/bin
+@@ -88,7 +85,7 @@
+ 	@(echo "char *Cdef_inc_path = \"$(INC_INSTALL)\";"; \
+ 	  echo "char *Carch = \"$(ARCH)\";"; \
+ 	  echo "char *Cdef_lib_path = \"$(LIB_INSTALL)\";"; \
+-	  echo "char *Ccflags = \"$(OLDCFLAGS)\";"; \
++	  echo "char *Ccflags = \"$(DEFAULT_CFLAGS)\";"; \
+ 	  echo "char *Ccomp = \"$(CC)\";") > $@
+ 
+ clean_arch:
+@@ -103,7 +100,7 @@
+ # specific file rules
+ 
+ $(ARCH)/src/%.o: $(ARCH)/src/%.c
+-	$(CC) $(OLDCFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ # general rules
+ 
+diff -ur cyclone-/src/Makefile cyclone/src/Makefile
+--- cyclone-/src/Makefile	Mon Nov 19 22:33:54 2001
++++ cyclone/src/Makefile	Wed Dec 12 01:40:06 2001
+@@ -72,7 +72,7 @@
+ 	@(echo "char *Carch = \"$(ARCH)\";"; \
+ 	  echo "char *Cdef_inc_path = \"$(INC_INSTALL)\";"; \
+ 	  echo "char *Cdef_lib_path = \"$(LIB_INSTALL)\";"; \
+-	  echo "char *Ccflags = \"$(CFLAGS)\";"; \
++	  echo "char *Ccflags = \"$(DEFAULT_CFLAGS)\";"; \
+ 	  echo "char *Ccomp = \"$(CC)\";") > $@
+ 
+ cyclone.$(O): version.h
+diff -ur cyclone-/src/cyclone.cyc cyclone/src/cyclone.cyc
+--- cyclone-/src/cyclone.cyc	Mon Nov 19 22:33:54 2001
++++ cyclone/src/cyclone.cyc	Wed Dec 12 01:52:21 2001
+@@ -820,6 +820,12 @@
+          new $("-pg",false,"",
+                new Flag_spec(add_ccarg),
+                "Compile for profiling with gprof"),
++         new $("-m",true,"whatever",
++               new Flag_spec(add_cpparg),
++               "Passed to C compiler"),
++         new $("-f",true,"whatever",
++               new Flag_spec(add_cpparg),
++               "Passed to C compiler"),
+          new $("-pa",false,"",
+                new Unit_spec(set_pa),
+                "Compile for profiling with aprof"),
