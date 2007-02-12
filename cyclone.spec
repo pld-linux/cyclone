@@ -1,5 +1,5 @@
 Summary:	The Cyclone compiler
-Summary(pl):	Kompilator jêzyka Cyclone
+Summary(pl.UTF-8):   Kompilator jÄ™zyka Cyclone
 Name:		cyclone
 Version:	0.5
 Release:	0.1
@@ -20,10 +20,10 @@ Cyclone is a language for C programmers who want to write secure,
 robust programs. It's a dialect of C designed to be safe: free of
 crashes, buffer overflows, format string attacks, and so on.
 
-%description -l pl
-Cyclone jest jêzykiem dla programistów C, którzy chc± pisaæ bezpieczne
-i szybkie programy. Jest on dialektem C zaprojektowanym by byæ
-bezpiecznym: wolnym od SEGV, przepe³nieñ buforów, format string
+%description -l pl.UTF-8
+Cyclone jest jÄ™zykiem dla programistÃ³w C, ktÃ³rzy chcÄ… pisaÄ‡ bezpieczne
+i szybkie programy. Jest on dialektem C zaprojektowanym by byÄ‡
+bezpiecznym: wolnym od SEGV, przepeÅ‚nieÅ„ buforÃ³w, format string
 attacks, itd.
 
 %prep
