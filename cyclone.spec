@@ -1,5 +1,5 @@
 Summary:	The Cyclone compiler
-Summary(pl.UTF-8):   Kompilator języka Cyclone
+Summary(pl.UTF-8):	Kompilator języka Cyclone
 Name:		cyclone
 Version:	0.5
 Release:	0.1
