@@ -29,7 +29,7 @@ attacks, itd.
 %prep
 %setup -q -n %{name}-%{version}-%{version} -a1
 %patch -P0 -p1
-#%patch1 -p1
+#%%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* config
